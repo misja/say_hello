@@ -1,17 +1,27 @@
 /**
- * Ask and remember a user's name and say hello
+  Ask and remember a user's name and say hello
+
  Run as:
-   swift interactive.swift
- */
+    swift interactive.swift
+*/
+ 
 
+var running = true
+var names:[String] = []
 
-while true {
-  print ("\nPlease enter your name")
-  print (" or exit to quit")
+while running {
+  print ("Your name: ")
 
-  if let name = readLine(){
-    if name=="exit" { break }
-    if name=="" { continue }
-    print ("Hello \(name); have we met before...?\n\n")
+  if let value = readLine(){
+    if value=="exit" {
+      print ("Bye!")
+      running=false
+    } else if names.contains(value) {
+      print ("Hallo \(value), we have met before :)")
+    } else {
+      names.append(value)
+      print ("Hi \(value)!")
+    }
   }
 }
+

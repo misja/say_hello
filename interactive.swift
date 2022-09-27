@@ -7,21 +7,22 @@
  
 
 var running = true
-var names:[String] = []
+var names: [String] = []
 
 while running {
-  print ("Your name: ")
+  print("Your name: ", terminator:"")
 
-  if let value = readLine(){
-    if value=="exit" {
-      print ("Bye!")
-      running=false
+  if let value = readLine() {
+    if value == "exit" {
+      print("Bye!")
+      running = false
     } else if names.contains(value) {
-      print ("Hallo \(value), we have met before :)")
+      print("Hallo \(value), we have met before :)")
     } else {
       names.append(value)
-      print ("Hi \(value)!")
+      print("Hi \(value)!")
     }
   }
 }
+
 
